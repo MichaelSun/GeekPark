@@ -18,11 +18,11 @@
 * 文件结构： 
     
     ---
-    |---- images/                存放CSS文件中使用到的 image 图片  
-    |---- js/                    调用js文件  
-    |---- base.css               CSS reset 文件  
-    |---- style.css              样式表 
-    |---- index.html             内容文件  
+     |---- images/                存放CSS文件中使用到的 image 图片  
+     |---- js/                    调用js文件  
+     |---- base.css               CSS reset 文件  
+     |---- style.css              样式表 
+     |---- index.html             内容文件  
 
 
 * 重构步骤约定：
