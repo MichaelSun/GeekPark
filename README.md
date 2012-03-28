@@ -15,13 +15,14 @@
 ###书写约定  
 ####样式与内容分离
 
-* 文件结构：  
-    \-\-\-\-   …  
-    |\-\-\-\- images/                存放CSS文件中使用到的 image 图片  
-    |\-\-\-\- js/                    调用js文件  
-    |\-\-\-\- base.css               CSS reset 文件  
-    |\-\-\-\- style.css              样式表 
-    |\-\-\-\- index.html             内容文件  
+* 文件结构： 
+     
+    ----   …  
+    |---- images/                存放CSS文件中使用到的 image 图片  
+    |---- js/                    调用js文件  
+    |---- base.css               CSS reset 文件  
+    |---- style.css              样式表 
+    |---- index.html             内容文件  
 
 * 重构步骤约定：
     1. index.html 全部样式附着于 class="xxx" **注：** _此时文件中不包含任何一个 id="xxx"_
