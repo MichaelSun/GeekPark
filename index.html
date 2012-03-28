@@ -1,91 +1,130 @@
 <!DOCTYPE html>
-<html>
 <head>
-  <meta charset='utf-8'>
-
-  <title>hzlzh/alice @ GitHub</title>
-
-  <style type="text/css">
-    body {
-      margin-top: 1.0em;
-      background-color: #16a730;
-      font-family: Helvetica, Arial, FreeSans, san-serif;
-      color: #ffffff;
-    }
-    #container {
-      margin: 0 auto;
-      width: 700px;
-    }
-    h1 { font-size: 3.8em; color: #e958cf; margin-bottom: 3px; }
-    h1 .small { font-size: 0.4em; }
-    h1 a { text-decoration: none }
-    h2 { font-size: 1.5em; color: #e958cf; }
-    h3 { text-align: center; color: #e958cf; }
-    a { color: #e958cf; }
-    .description { font-size: 1.2em; margin-bottom: 30px; margin-top: 30px; font-style: italic;}
-    .download { float: right; }
-    pre { background: #000; color: #fff; padding: 15px;}
-    hr { border: 0; width: 80%; border-bottom: 1px solid #aaa}
-    .footer { text-align:center; padding-top:30px; font-style: italic; }
-  </style>
+<title>Markdown Preview</title>
+<link rel="stylesheet" type="text/css" href="file://localhost/Users/hzlzh/Library/Application%20Support/Mou/CSS/GitHub.css">
 </head>
+<body><h2>GeekPark 代码规范</h2>
 
-<body>
-  <a href="https://github.com/hzlzh/alice"><img style="position: absolute; top: 0; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub" /></a>
+<p>这里是 <a href="http://geekpark.net/" title="http://geekpark.net/">GeekPark</a> &amp; <a href="http://www.itvalue.com.cn/">ITvalue</a> 前端开发团队遵循和约定的代码书写规范，意在控提高人代码的规范性和可维护性。</p>
 
-  <div id="container">
+<h3>规范内容</h3>
 
-    <div class="download">
-      <a href="https://github.com/hzlzh/alice/zipball/master">
-        <img border="0" width="90" src="https://github.com/images/modules/download/zip.png"></a>
-      <a href="https://github.com/hzlzh/alice/tarball/master">
-        <img border="0" width="90" src="https://github.com/images/modules/download/tar.png"></a>
-    </div>
+<ol>
+<li><p>CSS reset 文件：<a href="https://github.com/hzlzh/GeekPark/blob/master/base.css" title="CSS reset 文件">base.css</a><br>
+所有代码都基于这个文件。重设浏览器，解决依赖引起的耦合问题。</p></li>
+<li><p>规范：<a href="http://aliceui.com/css-spec/" title="CSS 代码书写规范">CSS 规范</a> / <del><a href="http://aliceui.com/alice-css-guide/" title="该项不予参考">样式库构建规范</a></del><br>
+此规范为参考规范，不是硬性要求，部分硬性约定见下一条[书写约定]，统一团队编码规范和风格。让所有代码都是有规可循的，并且能够得到沉淀，减少重复劳动。</p></li>
+<li><p>工具：<a href="http://aliceui.com/alice-css/#solutions" title="该项不予参考">通用兼容解决方案库</a><br>
+常见浏览器兼容问题的解决方案，可以参考这里的库。</p></li>
+</ol>
 
-    <h1><a href="https://github.com/hzlzh/alice">GeekPark 代码规范</a>
-      <span class="small">by <a href="https://github.com/hzlzh">hzlzh</a></span></h1>
 
-    <div class="description">
-      
-    </div>
+<h3>书写约定</h3>
 
-    
+<h4>样式与内容分离</h4>
 
-    
+<ul>
+<li><p>文件结构：</p>
 
-    
+<blockquote><p>----   …<br>
+|---- images/                存放CSS文件中使用到的 image 图片<br>
+|---- js/                    调用js文件<br>
+|---- base.css               CSS reset 文件<br>
+|---- style.css              样式表
+|---- index.html             内容文件</p></blockquote></li>
+<li><p>重构步骤约定：</p>
 
-    
-      <h2>License</h2>
-      <p>MIT License</p>
-    
+<ol>
+<li> index.html 全部样式附着于 class=“xxx” <strong>注：</strong> <em>此时文件中不包含任何一个 id=“xxx”</em></li>
+<li> 为上一步书写 CSS style<br>
+<strong>[至此重构完成]</strong></li>
+<li> 开始书写js交互文件，使用 ID 和 Class 定位被操作句柄</li>
+<li> 向 index.html 中需要的地方添加 id=“xxx"<br>
+<strong>[至此交互效果完成]</strong></li>
+</ol>
+</li>
+<li><p>命名规范：</p>
 
-    
-      <h2>Authors</h2>
-      <p>hzlzh (hzlzh.dev@gmail.com)</p>
-    
+<ul>
+<li>文件及文件夹: 全部英文小写字母+数字或连接符"- , _ “，不可出现中文等字符。<br>
+如：../geekevent/css/style.css, jquery.1.x.x.js</li>
+<li>ID: <a href="http://zh.wikipedia.org/wiki/%E5%8C%88%E7%89%99%E5%88%A9%E5%91%BD%E5%90%8D%E6%B3%95" title="Wiki:匈牙利命名法">匈牙利命名法</a> &amp; <a href="http://zh.wikipedia.org/wiki/%E9%A7%9D%E5%B3%B0%E5%BC%8F%E5%A4%A7%E5%B0%8F%E5%AF%AB" title="小駝峰式命名法">小駝峰式命名法</a><br>
+如：firstName, topBoxList, footerCopyright</li>
+<li>Class: [减号连接符]<br>
+如：top-item, main-box, box-list-item-1</li>
+</ul>
+</li>
+<li><p>格式&amp;编码：</p>
 
-    
-      <h2>Contact</h2>
-      <p>hzlzh (hzlzh.dev@gmail.com)<br/>      </p>
-    
+<ul>
+<li>文本文件： .xxx UTF-8<em>(无BOM)</em> 编码</li>
+<li>透明图片： .png <em>(PNG-24)</em></li>
+<li>动态图片： .gif</li>
+<li>打包文件： .zip</li>
+</ul>
+</li>
+<li><p>CSS 细化规范：</p>
 
-    <h2>Download</h2>
-    <p>
-      You can download this project in either
-      <a href="https://github.com/hzlzh/alice/zipball/master">zip</a> or
-      <a href="https://github.com/hzlzh/alice/tarball/master">tar formats.
-    </p>
-    <p>You can also clone the project with <a href="http://git-scm.com">Git</a>
-      by running:
-      <pre>$ git clone git://github.com/hzlzh/alice</pre>
-    </p>
+<ul>
+<li><p>CSS换行制表：使用 4 个空格，而非[tab]</p></li>
+<li><p>书写格式：</p>
 
-    <div class="footer">
-      get the source code on GitHub : <a href="https://github.com/hzlzh/alice">hzlzh/alice</a>
-    </div>
+<ul>
+<li>CSS名称+冒号+空格+属性 或者 名称+冒号+属性均可    <br>
+如：.box1{float: left;} 和 .box{float:left} 均可</li>
+<li>如多个class一起，需要再第一个后的",“号后加一个空格<br>
+如：.box1, .box2, .box3{float: left;}</li>
+</ul>
+</li>
+<li><p>CSS各熟悉的排列顺序：不做硬性要求<br>
+如：以下2种顺序均可</p>
 
-  </div>
+<blockquote><p></p><pre>.box{
+  /* 顺序1 */
+  background: none repeat scroll 0 0 transparent;
+  bottom: 11px;
+  position: relative;
+  width: 22px;
+  z-index: 33;
+}<br>
+.box{
+  /* 顺序2 */
+  z-index: 33;
+  width: 22px;
+  bottom: 11px;
+  background: transparent none repeat scroll 0 0 ;
+  position: relative;
+}</pre><p></p></blockquote></li>
+<li><p>CSS格式化：非最小压缩格式化，采用逐行显示属性的格式<br>
+如：<br>
+</p><pre>.box{
+  /* 注意这里换行是用 4 空格 */
+  z-index: 33;
+  width: 22px;
+  bottom: 11px;
+  background: transparent none repeat scroll 0 0 ;
+  position: relative;
+}</pre>
+可使用工具：<a href="http://www.cssportal.com/format-css/" title="格式化CSS，选择处理后的前三种">CSS Formate</a> 并选择处理，结果前三种均可使用<p></p></li>
+</ul>
+</li>
+<li><p>XHTML 细化规范：</p>
 
-</body>
-</html>
+<ul>
+<li>HTML换行缩进：采用 2 空格</li>
+<li>第一行统一使用：&lt;!DOCTYPE html&gt;</li>
+<li>&lt;img&gt;标签默认缺省格式：&lt;img src=“xxx.png” alt=“缺省时文字” \/&gt;</li>
+<li>&lt;a&gt;标签缺省格式：&lt;a href=“#” title=“链接名称”&gt;xxx&lt;/&gt; 注：target=“_blank” 根据需求决定</li>
+</ul>
+</li>
+<li><p>JS 细化规范：</p>
+
+<ul>
+<li>整理排版中，待发</li>
+</ul>
+</li>
+</ul>
+
+
+<p>– refer to <a href="https://github.com/alipay/alice" title="Alice 支付宝前端样式解决方案">Alice</a> &amp; <a href="http://twitter.github.com/bootstrap/" title="Bootstrap, from Twitter">Bootstrap</a></p>
+</body></html>
