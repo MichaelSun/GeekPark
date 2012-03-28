@@ -23,6 +23,15 @@
      |---- base.css               CSS reset 文件  
      |---- style.css              样式表 
      |---- index.html             内容文件  
+## 二、仓库目录结构：
+    
+    ---
+     |---- plugins/             浏览器兼容解决方案对应的编辑器插件
+     |---- solutions/           浏览器兼容解决方案（支持 Less CSS)
+     |---- tpl/                 参考的模板文件
+     |---- w3c/                 HTML5/CSS3 标准文档 (支持 Less CSS)
+     |---- base.css             Alice 的基础，所有样式均基于它
+     |---- readme.md     
 
 
 * 重构步骤约定：
