@@ -88,7 +88,7 @@
 * XHTML 细化规范：
     * HTML换行缩进：采用 2 空格
     * 第一行统一使用：<!DOCTYPE html>
-    * \<img\>标签默认缺省格式：\<img src="xxx.png" alt="缺省时文字" \/>
+    * \<img\>标签默认缺省格式：\<img src="xxx.png" alt="缺省时文字" />
     * \<a\>标签缺省格式：\<a href="#" title="链接名称">xxx\</> 注：target="_blank" 根据需求决定  
     * 整理排版中，待发
 * JS 细化规范：
