@@ -71,39 +71,64 @@ _其中，@require为可选项目_
 * CSS换行制表：使用 4 个空格，而非\[tab\]
        
     * 书写格式：
-        * CSS名称+冒号+空格+属性 或者 名称+冒号+属性均可      
-        如：.box1{float: left;} 和 .box{float:left} 均可
+        * CSS名称+冒号+属性  
+        如：.box1{float:left;}
         * 如多个class一起，需要再第一个后的","号后加一个空格  
-        如：.box1, .box2, .box3{float: left;}
+        如：.box1,.box2,.box3{font-family:Courier,'Courier New';}
         
     * CSS各熟悉的排列顺序：不做硬性要求  
-        
-    >如：以下2种顺序均可<pre>.box{
-        /\* 顺序1 \*/
-        background: none repeat scroll 0 0 transparent;
-        bottom: 11px;
-        position: relative;
-        width: 22px;
-        z-index: 33;
-    }  
-    .box{
-        /\* 顺序2 \*/
-        z-index: 33;
-        width: 22px;
-        bottom: 11px;
-        background: transparent none repeat scroll 0 0 ;
-        position: relative;
-    }</pre>
-    
+    _如：以下2种顺序均可_
+    >
+```
+.box{
+    /\* 顺序1 \*/
+    background: none repeat scroll 0 0 transparent;
+    bottom: 11px;
+    position: relative;
+    width: 22px;
+    z-index: 33;
+}
+```
+    >
+```
+.box{
+    /\* 顺序2 \*/
+    z-index: 33;
+    width: 22px;
+    bottom: 11px;
+    background: transparent none repeat scroll 0 0 ;
+    position: relative;
+}
+```
+  
+    * 切记业界书写准则：HTML不要相互嵌套，CSS 推荐嵌套。  
+    >
+```
+/* 推荐嵌套层级 */
+.ui-icon-rarr{background:...}
+.ui-icon-larr{background:...}
+.ui-title{font-size:...}
+.ui-nav .ui-list{...}
+.ui-table .ui-list{...}
+```
+    >
+```
+/* 不推荐 */
+.ui-icon-rarr{background:...}
+.ui-icon-larr{background:...}
+.ui-title{font-size:...}
+.ui-list{}
+.ui-nav{}
+```
     * CSS格式化：最终网站上输出的CSS，每个选择器单行，最优压缩，保留注释  
- 
-    >注意：其中的空格
-    <pre>
+    >
+```
 /\* 注释内容 \*/
 .box{z-index:33;width:22px;bottom:11px;background:transparent none repeat scroll 0 0 ;position: relative;}
 .box2{z-index:44;width:55px;}
-.box3,#box4{z-index:66;width:77px;}</pre>
-    可使用工具：[CSS Compressor] 并选择\[highest\]压缩  
+.box3,#box4{z-index:66;width:77px;}
+```
+    _可使用工具：[CSS Compressor] 并选择\[highest\]压缩_  
     
 ###XHTML 细化规范：
 * HTML换行缩进：采用 2 空格
