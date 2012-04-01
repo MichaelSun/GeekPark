@@ -58,14 +58,16 @@
     
 ###CSS 细化规范
 
-* 注释格式约定  
-><pre>
-/\*
+* CSS 注释格式约定  
+>
+```
+/*
 @name: Drop Down Menu
-@function: Style of top bar drop down menu.
+@description: Style of top bar drop down menu.
 @require: base.css
 @author: Andy Huang(andyahung@geekpark.net)
-\*/</pre>
+*/
+```
 _其中，@require为可选项目_ 
 
 * CSS换行制表：使用 4 个空格，而非\[tab\]
@@ -81,7 +83,7 @@ _其中，@require为可选项目_
     >
 ```
 .box{
-    /\* 顺序1 \*/
+    /* 顺序1 */
     background: none repeat scroll 0 0 transparent;
     bottom: 11px;
     position: relative;
@@ -92,7 +94,7 @@ _其中，@require为可选项目_
     >
 ```
 .box{
-    /\* 顺序2 \*/
+    /* 顺序2 */
     z-index: 33;
     width: 22px;
     bottom: 11px;
@@ -123,7 +125,7 @@ _其中，@require为可选项目_
     * CSS格式化：最终网站上输出的CSS，每个选择器单行，最优压缩，保留注释  
     >
 ```
-/\* 注释内容 \*/
+/* 注释内容 */
 .box{z-index:33;width:22px;bottom:11px;background:transparent none repeat scroll 0 0 ;position: relative;}
 .box2{z-index:44;width:55px;}
 .box3,#box4{z-index:66;width:77px;}
@@ -131,7 +133,51 @@ _其中，@require为可选项目_
     _可使用工具：[CSS Compressor] 并选择\[highest\]压缩_  
     
 ###XHTML 细化规范：
+
+* HTML 注释格式约定  
+    >
+```
+ <!--
+@name: Drop Down Menu
+@description: Style of top bar drop down menu.
+@require: base.css
+@author: Andy Huang(andyahung@geekpark.net)
+-->
+```
 * HTML换行缩进：采用 2 空格
+
+* 切记业界书写准则：HTML不要相互嵌套，CSS 推荐嵌套。  
+    >
+```
+/* 推荐嵌套层级 */
+  <ul class="ui-nav">
+    <li class="ui-nav-item"> some text
+        <ul class="ui-nav-item-child">
+            <li> some text
+                <ul class="ui-list">
+                    <li class="ui-list-item"> some text</li>
+                </ul...
+        </ul>
+    </li>
+    <li...
+</ul>
+```
+    >
+```
+/* 不推荐 */
+  <ul class="ui-nav">
+    <li class="ui-nav-item"> some text
+        <ul class="ui-nav-item-child">
+            <li> some text
+                <ul class="ui-nav">
+                    <li class="ui-nav-item"> some text </li>
+                </ul...
+        </ul>
+    </li>
+    <li...
+</ul>
+```
+
 * 第一行统一使用：<!DOCTYPE html>
 * \<img\>标签默认缺省格式：\<img src="xxx.png" alt="缺省时文字" />
 * \<a\>标签缺省格式：\<a href="#" title="链接名称">xxx\</> 注：target="_blank" 根据需求决定  
